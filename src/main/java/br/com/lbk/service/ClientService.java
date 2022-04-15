@@ -7,4 +7,6 @@ import br.com.lbk.model.Client;
 public interface ClientService {
 
 	List<Client> findAll();
+	
+	Client save(Client request);
 }

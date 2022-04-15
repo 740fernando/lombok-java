@@ -12,11 +12,20 @@ import br.com.lbk.service.ClientService;
 @Service
 public class ClientServiceImpl implements ClientService {
 
-	@Autowired
-	private ClientRepository repo;
+	private final ClientRepository repo;
+	
+	public ClientServiceImpl(ClientRepository repo) {
+		this.repo = repo;
+	}
+	
 	@Override
 	public List<Client> findAll() {
 		return repo.findAll();
+	}
+
+	@Override
+	public Client save(Client request) {
+		return repo.save(request);
 	}
 
 }
