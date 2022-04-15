@@ -10,22 +10,23 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.lbk.model.Client;
-import br.com.lbk.service.ClientService;
+import br.com.lbk.model.Product;
+import br.com.lbk.service.ProductService;
 
 @RestController
-@RequestMapping("/api/client")
-public class ClientController {
-	
+@RequestMapping("/api/product")
+public class ProductController {
+
 	@Autowired
-	private ClientService service;
-	
+	private ProductService service;
+
 	@GetMapping("/listar/todos")
-	public ResponseEntity<List<Client>>ListarTodos(){
+	public ResponseEntity<List<Product>> ListarTodos() {
 		return ResponseEntity.ok(service.findAll());
 	}
+
 	@PostMapping("/salvar")
-	public ResponseEntity<Client>salvar(@RequestBody Client request){
+	public ResponseEntity<Product> salvar(@RequestBody Product request) {
 		return ResponseEntity.ok(service.save(request));
 	}
 }
