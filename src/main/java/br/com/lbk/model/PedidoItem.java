@@ -10,8 +10,8 @@ import javax.persistence.Id;
 import lombok.Data;
 
 @Data
-@Entity(name="product")
-public class Product {
+@Entity(name="pedido")
+public class PedidoItem {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
