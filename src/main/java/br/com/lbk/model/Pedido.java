@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import lombok.Data;
@@ -15,7 +16,9 @@ public class Pedido {
 	@Id
 	private String id;
 	
+	@ManyToOne
 	private Client client;
 	
+	@OneToMany
 	private List<PedidoItem> itens; // Para controlar de forma mais precisas as casas decimais, eh utilizado BigDecimal
 }
