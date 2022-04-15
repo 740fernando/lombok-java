@@ -6,18 +6,20 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import lombok.Data;
 
 @Data
-@Entity(name="pedido")
+@Entity(name="pedido_item")
 public class PedidoItem {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	private String descricao;
+	@ManyToOne
+	private Product product;
 	
-	private BigDecimal valor; // Para controlar de forma mais precisas as casas decimais, eh utilizado BigDecimal
+	private BigDecimal valor;
 }
