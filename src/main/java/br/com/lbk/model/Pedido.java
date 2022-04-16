@@ -2,6 +2,7 @@ package br.com.lbk.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -16,9 +17,9 @@ public class Pedido {
 	@Id
 	private String id;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	private Client client;
 	
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL)
 	private List<PedidoItem> itens; // Para controlar de forma mais precisas as casas decimais, eh utilizado BigDecimal
 }
