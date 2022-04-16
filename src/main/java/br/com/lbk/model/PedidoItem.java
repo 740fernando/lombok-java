@@ -11,7 +11,7 @@ import javax.persistence.ManyToOne;
 import lombok.Data;
 
 @Data
-@Entity(name="pedido_item")
+@Entity
 public class PedidoItem {
 
 	@Id

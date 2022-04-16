@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import lombok.Data;
 
@@ -23,6 +24,5 @@ public class Client implements Serializable {
 	private String name;
 	
 	private String endereco;
-	
-	
+			
 }
